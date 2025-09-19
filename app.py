@@ -27,15 +27,15 @@ app = Flask(__name__)
 app.secret_key = 'your_secret_key'
 
 # Database and Mail Configurations
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://root:BMW6123@localhost/diabetes_app' # Replace with your actual database password and database name
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://root:BMW6123@localhost:3306/diabetes_app' # Replace with your actual database password and database name
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] =  'mrshreyash08@gmail.com'
-app.config['MAIL_PASSWORD'] = 'npyn kbyd ufbt otrc'
+app.config['MAIL_USERNAME'] =  'wankhadebhupesh424@gmail.com'
+app.config['MAIL_PASSWORD'] = 'mkvw pozd gdwp axxo'
 mail = Mail(app)
 
 bcrypt = Bcrypt(app)
@@ -456,3 +456,4 @@ if __name__ == '__main__':
     with app.app_context():
         db.create_all()  # Ensures the database tables are created within the application context
     app.run(debug=True)
+
