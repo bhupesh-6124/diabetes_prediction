@@ -452,11 +452,12 @@ def view_history():
         prob=diabetic_probs
     )
 
-if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()
-        db.session.commit()
-  # Ensures the database tables are created within the application context
+# Ensure tables exist
+with app.app_context():
+    db.create_all()
+    db.session.commit()
+
+if __name__ == "__main__":
     app.run(debug=True)
 
 
