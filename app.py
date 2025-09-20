@@ -454,7 +454,10 @@ def view_history():
 
 if __name__ == '__main__':
     with app.app_context():
-        db.create_all()  # Ensures the database tables are created within the application context
+    db.create_all()
+    db.session.commit()
+  # Ensures the database tables are created within the application context
     app.run(debug=True)
+
 
 
