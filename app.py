@@ -27,7 +27,7 @@ app = Flask(__name__)
 app.secret_key = 'your_secret_key'
 
 # Database and Mail Configurations
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://root:BMW6123@localhost:3306/diabetes_app' # Replace with your actual database password and database name
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///diabetes_app.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
@@ -456,4 +456,5 @@ if __name__ == '__main__':
     with app.app_context():
         db.create_all()  # Ensures the database tables are created within the application context
     app.run(debug=True)
+
 
